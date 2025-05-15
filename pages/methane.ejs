@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head') %>
+  <title>Methane Capture Info | Ecomine</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('/pages/factory.mp4') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.65);
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 10px;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      text-align: center;
+      color: #f39c12;
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+    }
+
+    ul {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #eee;
+      padding-left: 20px;
+    }
+
+    .cta-button {
+      display: block;
+      width: fit-content;
+      margin: 40px auto 0;
+      padding: 12px 25px;
+      background-color: #f39c12;
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      border: 2px solid #f39c12;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: transparent;
+      color: #f39c12;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>Implementing Methane Capture</h1>
+      <ul>
+        <li>Install methane capture systems at landfills to collect and utilize methane gas.</li>
+        <li>Implement anaerobic digesters in agricultural operations to capture methane from organic waste.</li>
+        <li>Use captured methane as a renewable energy source for heating or electricity generation.</li>
+        <li>Support and invest in technologies that improve the efficiency of methane capture and utilization.</li>
+      </ul>
+      <a href="http://localhost:8501" class="cta-button">Try Methane Estimator Tool</a>
+    </div>
+  </div>
+</body>
+</html>
