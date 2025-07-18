@@ -71,11 +71,9 @@ const sessionConfig = {
 
 
 app.use(async (req, res, next) => {
-    const sessionUserId = req.session?.userId;
-
-    if (sessionUserId) {
+    if (req.session && req.session.userId) {
         try {
-            const user = await User.findById(sessionUserId);
+            const user = await User.findById(req.session.userId);
             res.locals.currentUser = user;
         } catch (err) {
             console.error('Session user lookup error:', err);
