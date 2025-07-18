@@ -71,9 +71,11 @@ const sessionConfig = {
 
 
 app.use(async (req, res, next) => {
-    if (req.session.userId) {
+    const sessionUserId = req.session?.userId;
+
+    if (sessionUserId) {
         try {
-            const user = await User.findById(req.session.userId);
+            const user = await User.findById(sessionUserId);
             res.locals.currentUser = user;
         } catch (err) {
             console.error('Session user lookup error:', err);
@@ -84,6 +86,7 @@ app.use(async (req, res, next) => {
     }
     next();
 });
+
 
 // MongoDB connection with retry logic
 const connectWithRetry = () => {
