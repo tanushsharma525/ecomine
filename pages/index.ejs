@@ -486,18 +486,18 @@
 
 <!-- JavaScript for Map and Charts -->
 <script>
-    const maptilerApiKey = '<%- process.env.MAPTILER_API_KEY %>';
-    const minesData = <%- JSON.stringify(mines) %>;
+  const maptilerApiKey = '<%= process.env.MAPTILER_API_KEY %>';
+  const minesData = <%- JSON.stringify(mines) %>;
 
-    // Initialize Map
-    maptilersdk.config.apiKey = maptilerApiKey;
+  // Initialize Map
+  maptilersdk.config.apiKey = maptilerApiKey;
 
-    const map = new maptilersdk.Map({
-        container: 'map',
-        style: maptilersdk.MapStyle.DARK,
-        center: [79, 22],
-        zoom: 4
-    });
+  const map = new maptilersdk.Map({
+    container: 'map',
+    style: maptilersdk.MapStyle.DARK,
+    center: [79, 22],
+  });
+
 
     map.on('load', function () {
         // Prepare mines data with valid coordinates

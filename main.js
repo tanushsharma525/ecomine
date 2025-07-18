@@ -88,21 +88,21 @@ app.use(async (req, res, next) => {
 // MongoDB connection with retry logic
 const connectWithRetry = () => {
     const mongoUrl = process.env.MONGODB_URL || 'mongodb+srv://newcluster:newcluster@cluster0.kxfq0rm.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-    console.log('Attempting to connect to MongoDB at:', mongoUrl.replace(/\/\/[^@]+@/, '//****:****@')); // Hide credentials in logs
-    
-    mongoose.connect(mongoUrl, { 
-        useNewUrlParser: true, 
-        useUnifiedTopology: true 
+    console.log('Attempting to connect to MongoDB at:', mongoUrl.replace(/\/\/[^@]+@/, '//****:****@'));
+
+    mongoose.connect(mongoUrl, {
+        dbName: 'ecomine'
     })
     .then(() => {
-        console.log("MONGO CONNECTION OPEN!!!");
+        console.log("✅ MONGO CONNECTION OPEN!!!");
     })
     .catch(err => {
-        console.error("MongoDB Connection Error:", err.message);
-        console.log("Retrying in 5 seconds...");
+        console.error("❌ MongoDB Connection Error:", err.message);
+        console.log("🔁 Retrying in 5 seconds...");
         setTimeout(connectWithRetry, 5000);
     });
 };
+
 
 // Add MongoDB connection event handlers
 mongoose.connection.on('error', err => {
