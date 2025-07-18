@@ -282,8 +282,9 @@ app.use((err, req, res, next) => {
 
 // Start server with error handling
 const port = process.env.PORT || 3001;
+
 const server = app.listen(port, '0.0.0.0', () => {
-    console.log(`SERVER RUNNING ON PORT ${port}.....................`);
+    console.log(`🚀 Server is running on http://localhost:${port}`);
 }).on('error', (err) => {
     if (err.code === 'EADDRINUSE') {
         console.error(`Port ${port} is already in use. Trying again in 5 seconds...`);
@@ -294,9 +295,4 @@ const server = app.listen(port, '0.0.0.0', () => {
     } else {
         console.error('Server error:', err);
     }
-});
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });
