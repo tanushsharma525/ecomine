@@ -1,0 +1,2 @@
+
+Ecomine is a web platform built to promote transparency in mining activities. It allows users to explore registered mines, report environmental violations, and raise awareness about mining impacts. The project combines a user-friendly frontend with a Node.js + Express backend and MongoDB for data storage. It's deployed using Render and designed to support responsible mining practices through community contribution.
